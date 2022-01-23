@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='pds-tools',
     version='0.1',
-    packages=[''],
+    packages=['pdstools'],
     requires=['numpy', 'pyparsing'],
     url='https://github.com/SETI/pds-tools',
     license='Academic Free License v3.0',
