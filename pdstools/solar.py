@@ -6,7 +6,7 @@
 ################################################################################
 
 import numpy as np
-import tabulation as tab
+from . import tabulation as tab
 
 # Class constants
 AU = 149597870.7    # km

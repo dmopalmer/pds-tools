@@ -23,11 +23,11 @@ from scipy.ndimage.filters import median_filter
 from scipy.stats import rankdata
 from PIL import Image, ImageFilter
 
-from vicar import VicarImage, VicarError
-from colornames import ColorNames
-from tiff16 import WriteTiff16, ReadTiff16
-import pdsparser
-from tabulation import Tabulation
+from .vicar import VicarImage, VicarError
+from .colornames import ColorNames
+from .tiff16 import WriteTiff16, ReadTiff16
+from . import pdsparser
+from .tabulation import Tabulation
 import pickle
 
 # Use astropy.io.fits if possible; old pyfits is a backup option

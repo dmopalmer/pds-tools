@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import numpy as np
 
 def from_float32(buffer):
@@ -58,9 +60,9 @@ class Test_Vax(unittest.TestCase):
   def runTest(self):
 
     ieee = np.arange(11.).astype('<f4')
-    print ieee.view('uint8')
-    print ieee
-    print np.fromstring(to_float32(ieee), dtype='<f4')
+    print(ieee.view('uint8'))
+    print(ieee)
+    print(np.fromstring(to_float32(ieee), dtype='<f4'))
 
 ################################################################################
 # Perform unit testing if executed from the command line

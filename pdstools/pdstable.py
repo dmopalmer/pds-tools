@@ -49,8 +49,8 @@ import warnings
 import numpy as np
 import numbers
 
-import pdsparser
-import julian
+from . import pdsparser
+from . import julian
 
 # STR_DTYPE is 'S' for Python 2; 'U' for Python 3
 STR_DTYPE = np.array(['x']).dtype.kind

@@ -76,8 +76,8 @@ import pyparsing
 import unittest
 import numbers
 
-import textkernel as tk
-import julian_dateparser as jdp
+from . import textkernel as tk
+from . import julian_dateparser as jdp
 
 def _INT(arg):
     """Convert to int, works for for scalar, array, or array-like."""

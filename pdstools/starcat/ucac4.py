@@ -361,13 +361,13 @@ class UCAC4StarCatalog(StarCatalog):
             if star.ra >= ra_max:
                 # RA is in ascending order in the file
                 if self.debug_level > 1:
-                    print 'ID', parsed[42], 'SKIPPED RA AND REST OF FILE',
-                    print star.ra
+                    print('ID', parsed[42], 'SKIPPED RA AND REST OF FILE',
+                          star.ra)
                 break
             if (star.ra < ra_min or
                 star.dec < dec_min or star.dec >= dec_max):
                 if self.debug_level > 1:
-                    print 'ID', parsed[42], 'SKIPPED RA/DEC', star.ra, star.dec
+                    print('ID', parsed[42], 'SKIPPED RA/DEC', star.ra, star.dec)
                 continue
 
             #############
@@ -407,14 +407,14 @@ class UCAC4StarCatalog(StarCatalog):
             if vmag_min is not None:
                 if star.vmag is None or star.vmag < vmag_min:
                     if self.debug_level > 1:
-                        print 'ID', parsed[42], 'SKIPPED MODEL MAG',
-                        print star.vmag_model
+                        print('ID', parsed[42], 'SKIPPED MODEL MAG',
+                            star.vmag_model)
                     continue
             if vmag_max is not None:
                 if star.vmag is None or star.vmag > vmag_max:
                     if self.debug_level > 1:
-                        print 'ID', parsed[42], 'SKIPPED MODEL MAG',
-                        print star.vmag_model
+                        print('ID', parsed[42], 'SKIPPED MODEL MAG',
+                            star.vmag_model)
                     continue
             
             ###############
@@ -449,7 +449,7 @@ class UCAC4StarCatalog(StarCatalog):
                  star.obj_type == UCAC4_OBJ_TYPE_HPM_DISCREPANT)):
                 # Use with extreme caution
                 if self.debug_level:
-                    print 'ID', parsed[42], 'SKIPPED NOT CLEAN', star.obj_type
+                    print('ID', parsed[42], 'SKIPPED NOT CLEAN', star.obj_type)
                 continue
 
             #############################
@@ -490,7 +490,7 @@ class UCAC4StarCatalog(StarCatalog):
             cdf = parsed[6]
             if not allow_double and cdf != 0:
                 if self.debug_level:
-                    print 'ID', parsed[42], 'SKIPPED DOUBLE', cdf
+                    print('ID', parsed[42], 'SKIPPED DOUBLE', cdf)
                 continue
             star.double_star_flag = cdf // 10
             star.double_star_type = cdf % 10
@@ -514,8 +514,8 @@ class UCAC4StarCatalog(StarCatalog):
             star.extended_source = parsed[41] # XXX What units is this in?
             if not allow_galaxy and (star.galaxy_match or star.extended_source):
                 if self.debug_level:
-                    print 'ID', parsed[42], 'SKIPPED GALAXY/EXTENDED',
-                    print star.galaxy_match, star.extended_source
+                    print('ID', parsed[42], 'SKIPPED GALAXY/EXTENDED',
+                            star.galaxy_match, star.extended_source)
                 continue
             if star.galaxy_match:
                 star.galaxy_match = 10.**star.galaxy_match / 10. / 60. # Degrees
@@ -599,7 +599,7 @@ class UCAC4StarCatalog(StarCatalog):
 
             if require_pm and (star.pm_ra is None or star.pm_dec is None):
                 if self.debug_level:
-                    print 'ID', parsed[42], 'SKIPPED NO PM', parsed[14:18]
+                    print('ID', parsed[42], 'SKIPPED NO PM', parsed[14:18])
                 continue
             
             #################################
@@ -610,7 +610,7 @@ class UCAC4StarCatalog(StarCatalog):
             
             if not full_result:
                 if self.debug_level:
-                    print 'ID', parsed[42], 'OK!'
+                    print('ID', parsed[42], 'OK!')
                 yield star
                 continue
             
@@ -953,8 +953,8 @@ class UCAC4StarCatalog(StarCatalog):
                                                                 spectral_class)
                                     
             if self.debug_level:
-                print 'ID', parsed[42], 'OK!'
-                print star
+                print('ID', parsed[42], 'OK!')
+                print(star)
             yield star            
 
 #############################################################################

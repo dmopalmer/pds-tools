@@ -50,7 +50,7 @@ from pyparsing import *
 
 import datetime as dt
 import unittest
-import julian
+from . import julian
 
 global DICTIONARY
 DICTIONARY = {}

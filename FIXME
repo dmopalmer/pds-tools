@@ -1,0 +1,10 @@
+setup.py
+    add version number
+
+minimum python version (are you trying to make it 2.7 compatible, or do some files require __future__ imports)?
+    spice.py includes xrange (use range in python 3+)
+
+pdstools/__init__.py:
+    prune what you import
+
+picmaker.py:856 process_maker()    proceed not defined.  (Make it global)

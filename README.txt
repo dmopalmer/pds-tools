@@ -1,3 +1,21 @@
+                        **************
+                        ** PDSTOOLS **
+                        **************
+
+The original repo
+https://github.com/SETI/pds-tools/blob/master/LICENSE.txt
+was quick-and-dirty converted into a pip-installable module
+by dmopalmer@gmail.com
+
+The only purpose and only testing was to verify that the
+VicarImage parser worked under Python 3.9
+
+The pdstools.starcat code is known not to work under Python3
+and has been excluded from the pdstools.__init__ imports
+
+
+
+
                         ************
                         ** CSPICE **
                         ************

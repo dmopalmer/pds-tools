@@ -475,7 +475,7 @@ def my_assert(test):
 # Test program for grayscale
 ################################################################################
 
-from vicar import *
+from .vicar import *
 from optparse import OptionParser
 
 ROTATE_DICT = { "none"            : None,
